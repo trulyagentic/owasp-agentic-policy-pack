@@ -1,0 +1,21 @@
+{
+  "network": {
+    "bindHost": "0.0.0.0"
+  },
+  "dataGovernance": {
+    "zeroDataRetention": false,
+    "allowProviderTraining": true
+  },
+  "identity": {
+    "serviceAccountId": "admin",
+    "forwardClientIdentity": false
+  },
+  "budgetsAndLimits": {
+    "maxCostUsd": 0,
+    "maxRetries": 6
+  },
+  "audit": {
+    "failClosed": false,
+    "appendOnly": false
+  }
+}

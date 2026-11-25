@@ -1,0 +1,22 @@
+{
+  "agentId": "ap-invoice-agent-unsafe",
+  "serviceAccountId": "ops@example.com",
+  "allowShellExecution": true,
+  "tools": ["*", "write_invoice_payment", "bash"],
+  "humanApproval": {
+    "required": false,
+    "allowGroupInboxApproval": true
+  },
+  "memory": {
+    "isolation": "shared",
+    "sanitizeExternalWrites": false
+  },
+  "multiAgent": {
+    "enabled": true,
+    "requireSignedMessages": false
+  },
+  "audit": {
+    "failClosed": false,
+    "appendOnly": false
+  }
+}

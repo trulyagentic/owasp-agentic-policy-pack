@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "network": {
+    "bindHost": "127.0.0.1"
+  },
+  "dataGovernance": {
+    "zeroDataRetention": true,
+    "allowProviderTraining": false
+  },
+  "identity": {
+    "serviceAccountId": "svc-portkey-byoc",
+    "forwardClientIdentity": true,
+    "rejectSharedAdminAccounts": true
+  },
+  "budgetsAndLimits": {
+    "maxCostUsd": 25,
+    "maxRequestsPerMinute": 60,
+    "maxRetries": 2
+  },
+  "audit": {
+    "failClosed": true,
+    "appendOnly": true,
+    "killSwitchTtlSeconds": 900
+  },
+  "allowedProviders": ["aws-bedrock", "gcp-vertex-ai"]
+}

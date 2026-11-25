@@ -1,0 +1,35 @@
+{
+  "$schema": "https://trulyagentic.io/schemas/portkey-byoc-policy-v1.json",
+  "version": "1.0.0",
+  "name": "truly-agentic-byoc-zero-retention",
+  "description": "Zero-training, VPC-isolated Portkey OSS gateway configuration aligned with OWASP Agentic AI (ASI01-ASI10), UAE PDPL, and Dubai DESC ISR v3.",
+  "network": {
+    "bindHost": "127.0.0.1",
+    "tlsRequiredForRemote": true
+  },
+  "dataGovernance": {
+    "zeroDataRetention": true,
+    "allowProviderTraining": false,
+    "preferredRegions": ["me-central-1", "eu-central-1"],
+    "redactPiiBeforeInference": true
+  },
+  "identity": {
+    "serviceAccountId": "svc-agent-runtime",
+    "forwardClientIdentity": true,
+    "rejectSharedAdminAccounts": true
+  },
+  "budgetsAndLimits": {
+    "maxCostUsd": 25,
+    "maxRequestsPerMinute": 60,
+    "maxTokensPerCall": 16000,
+    "requestTimeoutMs": 30000,
+    "maxRetries": 2
+  },
+  "audit": {
+    "failClosed": true,
+    "appendOnly": true,
+    "hashChained": true,
+    "killSwitchTtlSeconds": 900
+  },
+  "allowedProviders": ["aws-bedrock", "gcp-vertex-ai", "azure-openai", "anthropic-zero-retention"]
+}

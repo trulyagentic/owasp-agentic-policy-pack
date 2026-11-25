@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "pack": "@trulyagentic/owasp-agentic-policy-pack",
+  "framework": "OWASP Top 10 for Agentic AI (2026)",
+  "guardrails": [
+    {
+      "id": "INV-ASI01-DIRECTIVE-SCAN",
+      "owaspId": "ASI01",
+      "description": "Block tool descriptions and ingested payloads containing imperative prompt-override markers.",
+      "patterns": [
+        "<IMPORTANT>",
+        "ignore previous instructions",
+        "disregard prior rules",
+        "system prompt override",
+        "exfiltrate"
+      ],
+      "action": "block"
+    },
+    {
+      "id": "INV-ASI02-WRITE-BOUNDARIES",
+      "owaspId": "ASI02",
+      "description": "Require explicit typed ceilings on monetary, delete, and external-write tool calls.",
+      "requirePolicyCeilings": true,
+      "blockWildcardTools": true,
+      "action": "block"
+    },
+    {
+      "id": "INV-ASI03-SCOPED-IDENTITY",
+      "owaspId": "ASI03",
+      "description": "Prohibit hardcoded credentials and shared admin handles inside tool and gateway payloads.",
+      "rejectSharedAdmins": ["admin", "root", "superuser"],
+      "action": "block"
+    },
+    {
+      "id": "INV-ASI04-MANIFEST-PINNING",
+      "owaspId": "ASI04",
+      "description": "Verify MCP server tool definitions match pinned SHA-256 digests prior to registration.",
+      "requireSha256Pin": true,
+      "action": "block"
+    },
+    {
+      "id": "INV-ASI09-NAMED-APPROVER",
+      "owaspId": "ASI09",
+      "description": "Require named individual human sign-off bound to input SHA-256 hash on write/destructive actions.",
+      "requireIndividualApprover": true,
+      "disallowGroupInbox": true,
+      "action": "require_approval"
+    },
+    {
+      "id": "INV-ASI10-FAIL-CLOSED-LEDGER",
+      "owaspId": "ASI10",
+      "description": "Abort tool invocation whenever immutable append-only pre-execution logging fails.",
+      "failClosed": true,
+      "action": "block"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "note": "Control alignment crosswalk for BYOC engineering teams — does not represent third-party certification.",
+  "mappings": {
+    "ASI01": {
+      "owaspName": "Agent Goal Hijack & Indirect Prompt Injection",
+      "uaePdpl": ["Art. 20 (Technical & Organizational Security Measures)", "Art. 5 (Purpose Limitation)"],
+      "descIsrV3": ["Domain 6 (Operations Security)", "Domain 8 (Information Systems Acquisition & Maintenance)"],
+      "soc2Tsc": ["CC6.6", "CC7.1"]
+    },
+    "ASI02": {
+      "owaspName": "Tool Misuse & Excessive Agency",
+      "uaePdpl": ["Art. 5 (Data Minimization)", "Art. 20 (Security Controls)"],
+      "descIsrV3": ["Domain 5 (Access Control)", "Domain 6 (Operations Security)"],
+      "soc2Tsc": ["CC6.1", "CC6.3"]
+    },
+    "ASI03": {
+      "owaspName": "Identity & Privilege Abuse",
+      "uaePdpl": ["Art. 20 (Access Control & Confidentiality)", "Art. 21 (Confidentiality of Processing)"],
+      "descIsrV3": ["Domain 5 (Access Control)", "Domain 2 (Organization of Information Security)"],
+      "soc2Tsc": ["CC6.1", "CC6.2", "CC6.3"]
+    },
+    "ASI04": {
+      "owaspName": "Agentic Supply Chain & MCP Tool Poisoning",
+      "uaePdpl": ["Art. 7 (Processor Integrity Controls)", "Art. 20 (Technical Safeguards)"],
+      "descIsrV3": ["Domain 9 (Supplier Relationships)", "Domain 8 (System Development & Maintenance)"],
+      "soc2Tsc": ["CC8.1", "CC9.2"]
+    },
+    "ASI05": {
+      "owaspName": "Unexpected Code & Command Execution",
+      "uaePdpl": ["Art. 20 (System Integrity & Protection Against Unauthorized Processing)"],
+      "descIsrV3": ["Domain 6 (Operations Security)", "Domain 8 (Secure Engineering)"],
+      "soc2Tsc": ["CC6.6", "CC7.1"]
+    },
+    "ASI06": {
+      "owaspName": "Memory & Context Poisoning / Unintended Retention",
+      "uaePdpl": ["Art. 5 (Retention & Purpose Controls)", "Art. 22 (Cross-Border Transfer Restrictions)"],
+      "descIsrV3": ["Domain 4 (Asset Management)", "Domain 12 (Compliance)"],
+      "soc2Tsc": ["CC6.5", "P4.1"]
+    },
+    "ASI07": {
+      "owaspName": "Insecure Inter-Agent Communication",
+      "uaePdpl": ["Art. 20 (Transmission Security)"],
+      "descIsrV3": ["Domain 7 (Communications Security)"],
+      "soc2Tsc": ["CC6.7"]
+    },
+    "ASI08": {
+      "owaspName": "Cascading & Runaway Failure Modes",
+      "uaePdpl": ["Art. 20 (Availability & Resilience)"],
+      "descIsrV3": ["Domain 11 (Business Continuity)"],
+      "soc2Tsc": ["CC7.2", "A1.2"]
+    },
+    "ASI09": {
+      "owaspName": "Human-Agent Trust Exploitation & Missing Sign-Off",
+      "uaePdpl": ["Art. 18 (Automated Processing Safeguards)", "Art. 20 (Accountability)"],
+      "descIsrV3": ["Domain 5 (Access Control)", "Domain 6 (Change & Operations Control)"],
+      "soc2Tsc": ["CC5.2", "CC6.3"]
+    },
+    "ASI10": {
+      "owaspName": "Rogue Agents & Audit Trail Bypass",
+      "uaePdpl": ["Art. 9 (Incident & Breach Accountability)", "Art. 20 (Logging & Monitoring)"],
+      "descIsrV3": ["Domain 6 (Logging & Monitoring)", "Domain 10 (Security Incident Management)"],
+      "soc2Tsc": ["CC7.2", "CC7.3"]
+    }
+  }
+}

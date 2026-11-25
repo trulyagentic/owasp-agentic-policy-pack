@@ -1,0 +1,40 @@
+{
+  "agentId": "ap-invoice-triage-shadow",
+  "identity": {
+    "serviceAccountId": "svc-ap-invoice-triage",
+    "forwardClientIdentity": true,
+    "rejectSharedAdminAccounts": true
+  },
+  "dataGovernance": {
+    "zeroDataRetention": true,
+    "allowProviderTraining": false
+  },
+  "allowShellExecution": false,
+  "tools": ["read_erp_invoice", "propose_invoice_approval"],
+  "policyCeilings": {
+    "maxAmountUsd": 10000,
+    "allowedCurrencies": ["USD", "AED", "EUR"]
+  },
+  "humanApproval": {
+    "required": true,
+    "allowGroupInboxApproval": false
+  },
+  "budgetsAndLimits": {
+    "maxCostUsd": 25,
+    "maxRequestsPerMinute": 30,
+    "maxRetries": 2
+  },
+  "memory": {
+    "isolation": "per-tenant",
+    "sanitizeExternalWrites": true
+  },
+  "multiAgent": {
+    "enabled": true,
+    "requireSignedMessages": true
+  },
+  "audit": {
+    "failClosed": true,
+    "appendOnly": true,
+    "killSwitchTtlSeconds": 900
+  }
+}
